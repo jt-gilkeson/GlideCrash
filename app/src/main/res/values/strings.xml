@@ -1,0 +1,4 @@
+<resources>
+	<string name="app_name">GlideCrash</string>
+	<string name="show_details">Show Details Fragment</string>
+</resources>
