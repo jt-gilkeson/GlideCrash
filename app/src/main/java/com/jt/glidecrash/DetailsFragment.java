@@ -37,6 +37,6 @@ public class DetailsFragment extends Fragment
 		super.onViewCreated(view, savedInstanceState);
 
 		ImageView iv = (ImageView)view.findViewById(R.id.glide_image);
-		Glide.with(this).load("http://www.ssaurel.com/blog/wp-content/uploads/2016/04/glide_logo.png").crossFade().into(iv);
+		Glide.with(this).load("http://www.ssaurel.com/blog/wp-content/uploads/2016/04/glide_logo.png").into(iv);
 	}
 }

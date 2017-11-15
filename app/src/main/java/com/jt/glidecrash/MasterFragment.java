@@ -12,8 +12,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import java.lang.reflect.Field;
-
 /**
  * Created by JT on 11/16/2016.
  */
@@ -69,38 +67,38 @@ public class MasterFragment extends Fragment
 	public void onAttach(Context context)
 	{
 		// Deal with google support library bug
-		if (mGogoChildFragmentManager != null)
-		{
-			try
-			{
-				Field childField = Fragment.class.getDeclaredField("mChildFragmentManager");
-				childField.setAccessible(true);
-				childField.set(this, mGogoChildFragmentManager);
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-			}
-		}
+//		if (mGogoChildFragmentManager != null)
+//		{
+//			try
+//			{
+//				Field childField = Fragment.class.getDeclaredField("mChildFragmentManager");
+//				childField.setAccessible(true);
+//				childField.set(this, mGogoChildFragmentManager);
+//			}
+//			catch (Exception e)
+//			{
+//				e.printStackTrace();
+//			}
+//		}
 
 		super.onAttach(context);
 	}
 
 	void loadFragment(Fragment frag)
 	{
-		FragmentTransaction ft = getGogoChildFragmentManager().beginTransaction();
+		FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 		ft.replace(R.id.fragment_holder, frag, null);
 		ft.commitAllowingStateLoss();
 	}
 
-	protected FragmentManager getGogoChildFragmentManager()
-	{
-		if (mGogoChildFragmentManager == null)
-		{
-			mGogoChildFragmentManager = getChildFragmentManager();
-		}
-
-		return mGogoChildFragmentManager;
-	}
+//	protected FragmentManager getGogoChildFragmentManager()
+//	{
+//		if (mGogoChildFragmentManager == null)
+//		{
+//			mGogoChildFragmentManager = getChildFragmentManager();
+//		}
+//
+//		return mGogoChildFragmentManager;
+//	}
 
 }
